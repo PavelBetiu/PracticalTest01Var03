@@ -1,5 +1,4 @@
 package ro.pub.cs.systems.eim.practicaltest01.view;
-
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
@@ -25,7 +24,6 @@ public class PracticalTest01MainActivity extends AppCompatActivity {
     private Button navigateToSecondaryActivityButton;
 
     private int serviceStatus = Constants.SERVICE_STOPPED;
-
     private IntentFilter intentFilter = new IntentFilter();
 
     private ButtonClickListener buttonClickListener = new ButtonClickListener();
@@ -35,13 +33,14 @@ public class PracticalTest01MainActivity extends AppCompatActivity {
         public void onClick(View view) {
             int leftNumberOfClicks = Integer.valueOf(leftEditText.getText().toString());
             int rightNumberOfClicks = Integer.valueOf(rightEditText.getText().toString());
-            int result = Integer.valueOf(rightEditText.getText().toString());
+            int result = Integer.valueOf(resultEditText.getText().toString());
+
             switch(view.getId()) {
                 case R.id.press_me_button:
-                    rightEditText.setText(String.valueOf(leftNumberOfClicks + rightNumberOfClicks));
+                    leftEditText.setText(String.valueOf(leftNumberOfClicks + rightNumberOfClicks));
                     break;
                 case R.id.press_me_too_button:
-                    leftEditText.setText(String.valueOf(rightNumberOfClicks -  leftNumberOfClicks));
+                    rightEditText.setText(String.valueOf(rightNumberOfClicks -  leftNumberOfClicks));
                     break;
                 case R.id.navigate_to_secondary_activity_button:
                     Intent intent = new Intent(getApplicationContext(), PracticalTest01SecondaryActivity.class);
@@ -78,6 +77,7 @@ public class PracticalTest01MainActivity extends AppCompatActivity {
         leftEditText = (EditText)findViewById(R.id.left_edit_text);
         rightEditText = (EditText)findViewById(R.id.right_edit_text);
         pressMeButton = (Button)findViewById(R.id.press_me_button);
+        resultEditText = (EditText)findViewById(R.id.result);
         pressMeButton.setOnClickListener(buttonClickListener);
         pressMeTooButton = (Button)findViewById(R.id.press_me_too_button);
         pressMeTooButton.setOnClickListener(buttonClickListener);
