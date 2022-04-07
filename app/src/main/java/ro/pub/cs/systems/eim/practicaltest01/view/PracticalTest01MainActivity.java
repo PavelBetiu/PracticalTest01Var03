@@ -19,6 +19,7 @@ import ro.pub.cs.systems.eim.practicaltest01.service.PracticalTest01Service;
 public class PracticalTest01MainActivity extends AppCompatActivity {
 
     private EditText leftEditText;
+    private EditText resultEditText;
     private EditText rightEditText;
     private Button pressMeButton, pressMeTooButton;
     private Button navigateToSecondaryActivityButton;
@@ -34,14 +35,13 @@ public class PracticalTest01MainActivity extends AppCompatActivity {
         public void onClick(View view) {
             int leftNumberOfClicks = Integer.valueOf(leftEditText.getText().toString());
             int rightNumberOfClicks = Integer.valueOf(rightEditText.getText().toString());
-
+            int result = Integer.valueOf(rightEditText.getText().toString());
             switch(view.getId()) {
                 case R.id.press_me_button:
-                    leftEditText.setText(String.valueOf(leftNumberOfClicks + rightNumberOfClicks));
+                    rightEditText.setText(String.valueOf(leftNumberOfClicks + rightNumberOfClicks));
                     break;
                 case R.id.press_me_too_button:
-                    rightNumberOfClicks++;
-                    rightEditText.setText(String.valueOf(rightNumberOfClicks -  leftNumberOfClicks));
+                    leftEditText.setText(String.valueOf(rightNumberOfClicks -  leftNumberOfClicks));
                     break;
                 case R.id.navigate_to_secondary_activity_button:
                     Intent intent = new Intent(getApplicationContext(), PracticalTest01SecondaryActivity.class);

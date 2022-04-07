@@ -46,15 +46,16 @@
         android:id="@+id/result"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:enabled="false"
-        android:inputType="number"
-        android:ems="7"
-        android:gravity="center"
-        android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginEnd="255dp"
+        android:layout_marginRight="255dp"
+        android:ems="7"
+        android:enabled="false"
+        android:gravity="center"
+        android:inputType="number"
         android:saveEnabled="false"
-        android:text="@string/zero"
-        android:layout_below="@id/navigate_to_secondary_activity_button"/>
+        android:text="@string/zero" />
 
     <Button
         android:id="@+id/press_me_button"
@@ -72,10 +73,15 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/right_edit_text"
-        android:layout_alignLeft="@id/right_edit_text"
         android:layout_alignStart="@id/right_edit_text"
-        android:layout_alignRight="@id/right_edit_text"
+        android:layout_alignLeft="@id/right_edit_text"
         android:layout_alignEnd="@id/right_edit_text"
-        android:text="@string/press_me_too"/>
+        android:layout_alignRight="@id/right_edit_text"
+        android:layout_marginStart="-8dp"
+        android:layout_marginLeft="-8dp"
+        android:layout_marginTop="0dp"
+        android:layout_marginEnd="9dp"
+        android:layout_marginRight="9dp"
+        android:text="@string/press_me_too" />
 
 </RelativeLayout>
